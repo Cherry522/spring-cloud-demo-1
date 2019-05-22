@@ -1,13 +1,11 @@
+#该应用的基本配置信息
 server:
-  port: 8888
-spring:
-  application:
-    name: config-server
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/Cherry522/spring-cloud-demo-1.git     # 配置git仓库的地址
-          search-paths: config-repo                             # git仓库地址下的相对地址，可以配置多个，用,分割。
-          username:                                             # git仓库的账号
-          password:                                             # git仓库的密码
+  port: 8888 #本服务启动后的端口号
+#spring:
+#  rabbitmq:
+#    host: @confServerRabbitMQHost@
+#    port: @confServerRabbitMQPort@
+#    username: @confServerRabbitMQUserName@
+#    password: @confServerRabbitMQPassword@
+#    virtual-host: uec
+#    requested-heartbeat: 5 #指定心跳超时，0为不指定，5就表示超过5秒认为没有心跳
