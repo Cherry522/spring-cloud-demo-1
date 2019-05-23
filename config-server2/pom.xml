@@ -5,7 +5,9 @@
     <parent>
         <!--<groupId>org.springframework.boot</groupId>-->
         <!--<artifactId>spring-boot-starter-parent</artifactId>-->
-        <!--<version>1.5.20.RELEASE</version>-->
+        <!--&lt;!&ndash;<version>1.5.21.RELEASE</version>&ndash;&gt;-->
+        <!--&lt;!&ndash;<version>1.3.5.RELEASE</version>&ndash;&gt;-->
+        <!--<version>1.5.16.RELEASE</version>-->
         <!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
 
         <groupId>com.cherry.demo</groupId>
@@ -13,55 +15,35 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <!--<groupId>com.cherry.demo</groupId>-->
-    <artifactId>eureka-product</artifactId>
+    <artifactId>config-server2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-product</name>
+    <name>config-server</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <!--<java.version>1.8</java.version>-->
-        <!--<spring-cloud.version>Edgware.SR5</spring-cloud.version>-->
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Edgware.SR5</spring-cloud.version>
     </properties>
 
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 引入对eureka的支持 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-test</artifactId>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-
-        <!-- 熔断的页面 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <!-- config客户端配置 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-
-
-        <!-- 增加对消息总线的支持，用于处理配置文件改变后，推送 -->
+        <!-- 增加对消息总线的支持，用于处理配置文件改变后，推送配置文件到config客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>

@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EurekaProduct2Application {
 
-//    @RequestMapping(value = {"","/"})
-//    public String index() {
-//        return "欢迎访问EurekaProduct2服务";
-//    }
+    @RequestMapping(value = "")
+    public String index() {
+        return "欢迎访问EurekaProduct2服务";
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(EurekaProduct2Application.class, args);

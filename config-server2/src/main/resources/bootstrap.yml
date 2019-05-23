@@ -25,10 +25,6 @@ spring:
     username: admin
     password: 123456
 
-#当调用/refersh 接口的时候，关闭安全验证
-management:
-  security:
-    enabled: false
 
 eureka:
   client:
