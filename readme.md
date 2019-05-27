@@ -3,6 +3,8 @@ http://www.ityouknow.com/springcloud/2017/05/10/springcloud-eureka.html
 
 
 ### 依赖工具
+
+
 #### RabbitMQ
 ##### 启动命令
 ```
@@ -25,3 +27,11 @@ curl -X POST http://localhost:8999/bus/refresh
 
 curl -X POST http://localhost:8888/bus/refresh
 
+
+### 服务启动顺序
+1.eureka-service
+2.config-service
+3.rabbitmq/kafka
+4.eureka-product
+5.eureka-cunsumer
+5.
